@@ -1,11 +1,14 @@
 //! Module with a helper to split cobertura files into smaller chunks
-use std::io::{Cursor, Write};
-use std::path::Path;
+use std::{
+    io::{Cursor, Write},
+    path::Path,
+};
 
-use quick_xml::events::BytesEnd;
-use quick_xml::events::Event;
-use quick_xml::reader::Reader;
-use quick_xml::writer::Writer;
+use quick_xml::{
+    events::{BytesEnd, Event},
+    reader::Reader,
+    writer::Writer,
+};
 
 use crate::XML_HEADER;
 
