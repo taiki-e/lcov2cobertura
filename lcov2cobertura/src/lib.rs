@@ -1,10 +1,14 @@
 //! Library to convert lcov data to cobertura XML files
-use std::collections::{BTreeMap, HashMap};
-use std::io::{BufRead, Cursor, Lines, Write};
-use std::path::Path;
+use std::{
+    collections::{BTreeMap, HashMap},
+    io::{BufRead, Cursor, Lines, Write},
+    path::Path,
+};
 
-use quick_xml::events::{BytesEnd, BytesStart, BytesText, Event};
-use quick_xml::writer::Writer;
+use quick_xml::{
+    events::{BytesEnd, BytesStart, BytesText, Event},
+    writer::Writer,
+};
 
 mod cobertura_split;
 mod demangle;
@@ -15,11 +19,7 @@ pub use demangle::{CppDemangler, Demangler, NullDemangler, RustDemangler};
 
 #[allow(clippy::cast_precision_loss)]
 fn percent(a: usize, b: usize) -> f64 {
-    if a == 0 {
-        0.
-    } else {
-        b as f64 / a as f64
-    }
+    if a == 0 { 0. } else { b as f64 / a as f64 }
 }
 
 /// Summary of coverage info

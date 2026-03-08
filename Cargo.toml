@@ -1,24 +1,24 @@
 [package]
 name = "lcov2xml"
-version = "1.0.7"
-edition = "2021"
+version = "1.0.9"
+edition = "2024"
 license = "Apache-2.0"
 description = "convert LCOV info file to cobertura XML format"
 repository = "https://github.com/mike-kfed/lcov2cobertura"
 keywords = ["coverage", "gitlab", "cobertura", "lcov"]
 categories = ["command-line-utilities"]
-rust-version = "1.81"
+rust-version = "1.87"
 
 [workspace]
 
 [dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 clap = { version = "4.5", features = ["derive", "help", "std", "usage"], default-features =  false }
 lcov = "0.8.1"
 lcov2cobertura = { path = "lcov2cobertura", version = "1.0.6" }
 
 [dev-dependencies]
-quick-xml = "0.38.4"
+quick-xml = "0.39.2"
 
 [profile.release]
 strip = "symbols"
@@ -56,8 +56,8 @@ rust-2018-idioms = "deny"
 nonstandard-style = "deny"
 
 [lints.clippy]
-suspicious = "forbid"
-style = "forbid"
-complexity = "forbid"
-perf = "forbid"
-pedantic = "forbid"
+suspicious = "deny"
+style = "deny"
+complexity = "deny"
+perf = "deny"
+pedantic = "deny"

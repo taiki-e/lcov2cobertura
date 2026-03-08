@@ -1,12 +1,14 @@
 //! Executable to generate huge cobertura XML files containing fake data
-use std::io::Seek;
-use std::io::Write;
-use std::path::Path;
-use std::path::PathBuf;
+use std::{
+    io::{Seek, Write},
+    path::{Path, PathBuf},
+};
 
 use clap::Parser;
-use quick_xml::events::{BytesEnd, BytesStart, BytesText, Event};
-use quick_xml::writer::Writer;
+use quick_xml::{
+    events::{BytesEnd, BytesStart, BytesText, Event},
+    writer::Writer,
+};
 
 /// Command line arguments
 #[derive(Parser, Debug)]
