@@ -1,18 +1,18 @@
 [package]
 name = "lcov2cobertura"
 version = "1.0.7"
-edition = "2021"
+edition = "2024"
 license = "Apache-2.0"
 description = "convert LCOV info file to cobertura XML format"
 repository = "https://github.com/mike-kfed/lcov2cobertura"
 keywords = ["coverage", "gitlab", "cobertura", "lcov"]
-rust-version = "1.81"
+rust-version = "1.87"
 
 [dependencies]
-anyhow = "1.0.100"
-quick-xml = "0.38.4"
-regex = "1.12.2"
-rustc-demangle = "0.1.26"
+anyhow = "1.0.102"
+quick-xml = "0.39.2"
+regex = "1.12.3"
+rustc-demangle = "0.1.27"
 
 [lib]
 name = "lcov2cobertura"

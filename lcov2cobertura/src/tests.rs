@@ -82,7 +82,7 @@ fn test_exclude_package() {
 
 #[test]
 fn test_method_name_with_comma() {
-    let lcov =  "TN:\nSF:foo/file.ext\nDA:1,1\nDA:2,0\nFN:1,(anonymous_1<foo, bar>)\nFN:2,namedFn\nFNDA:1,(anonymous_1<foo, bar>)\nend_of_record\n";
+    let lcov = "TN:\nSF:foo/file.ext\nDA:1,1\nDA:2,0\nFN:1,(anonymous_1<foo, bar>)\nFN:2,namedFn\nFNDA:1,(anonymous_1<foo, bar>)\nend_of_record\n";
     let result = parse_lines(lcov.as_bytes().lines(), "", &[]).unwrap();
     let foo = result.packages.get("foo").unwrap();
     let class = foo.classes.get("foo/file.ext").unwrap();
@@ -102,8 +102,7 @@ fn test_treat_non_integer_line_execution_count_as_zero() {
 
 #[test]
 fn test_generate_cobertura_xml() {
-    let lcov =
-            "TN:\nSF:foo/file.ext\nDA:1,1\nDA:2,0\nBRDA:1,1,1,1\nBRDA:1,1,2,0\nFN:1,(anonymous_1)\nFN:2,namedFn\nFNDA:1,(anonymous_1)\nend_of_record\n";
+    let lcov = "TN:\nSF:foo/file.ext\nDA:1,1\nDA:2,0\nBRDA:1,1,1,1\nBRDA:1,1,2,0\nFN:1,(anonymous_1)\nFN:2,namedFn\nFNDA:1,(anonymous_1)\nend_of_record\n";
     let xml = r#"<?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "https://cobertura.sourceforge.net/xml/coverage-04.dtd">
 <coverage branch-rate="0.5" branches-covered="1" branches-valid="2" complexity="0" line-rate="0.5" lines-covered="1" lines-valid="2" timestamp="1346815648000" version="2.0.3">
