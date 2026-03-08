@@ -39,7 +39,7 @@ jobs:
           file: ./lcov2xml.Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/lcov2xml:${{ github.ref_name }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/lcov2xml:${{ github.event.release.tag_name }}
             ${{ secrets.DOCKERHUB_USERNAME }}/lcov2xml:latest
 
       # 4. Build and push the image
@@ -50,5 +50,5 @@ jobs:
           file: ./cobertura_split.Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/cobertura_split:${{ github.ref_name }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/cobertura_split:${{ github.event.release.tag_name }}
             ${{ secrets.DOCKERHUB_USERNAME }}/cobertura_split:latest
