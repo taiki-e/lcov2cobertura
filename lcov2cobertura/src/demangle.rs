@@ -1,9 +1,10 @@
 //! Interface and implementation of different demanglers
-use regex::Regex;
-use rustc_demangle::demangle;
 use std::borrow::Cow;
 use std::io::{self, BufRead, BufReader, Write};
 use std::process::{Child, ChildStdin, ChildStdout, Command, Stdio};
+
+use regex::Regex;
+use rustc_demangle::demangle;
 
 /// Basic interface to demangle function/method names
 pub trait Demangler<'a, 'b> {

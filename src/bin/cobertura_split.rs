@@ -2,7 +2,6 @@
 use std::path::PathBuf;
 
 use clap::Parser;
-
 use lcov2cobertura as lcov2xml;
 
 /// Cmd line arguments

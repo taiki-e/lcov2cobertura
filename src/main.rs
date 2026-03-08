@@ -1,10 +1,10 @@
 //! executable to run the conversion
 
-use clap::Parser;
 use std::io::{BufRead, Read};
 use std::path::PathBuf;
 use std::time::SystemTime;
 
+use clap::Parser;
 use lcov2cobertura as lcov2xml;
 
 /// Command line arguments

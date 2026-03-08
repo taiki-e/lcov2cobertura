@@ -2,11 +2,12 @@
 use std::io::{Cursor, Write};
 use std::path::Path;
 
-use crate::XML_HEADER;
 use quick_xml::events::BytesEnd;
 use quick_xml::events::Event;
 use quick_xml::reader::Reader;
 use quick_xml::writer::Writer;
+
+use crate::XML_HEADER;
 
 const MAX_SIZE: usize = 9_500_000; // Use below 10 megabytes to be on the safe side
 
